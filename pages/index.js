@@ -4,458 +4,20 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 const Home = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: "ease-in-out",
-      offset: 50,
-    });
+    let isMounted = true;
+
+    if (isMounted) {
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        offset: 50,
+      });
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
-  // const controls = useAnimation();
-  // const [scrollProgress, setScrollProgress] = useState(0);
-  // const [scrollStyles, setScrollStyles] = useState({
-  //   willChange: "transform",
-  //   transform:
-  //     "translate3d(0px, -15%, 0px) scale3d(1, 1, 1) rotateX(20deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-  //   transformStyle: "preserve-3d",
-  //   opacity: 0.66492,
-  //   transition: "transform 1s",
-  // });
-
-  // useEffect(() => {
-  //   let lastScrollTop = 0;
-
-  //   const handleScroll = () => {
-  //     const st = window.scrollY;
-
-  //     console.log("Scroll position:", st);
-
-  //     const percentage = Math.min(0, Math.max(-15, st * -0.1));
-  //     const rotateX = Math.min(20, Math.max(0, st * 0.1));
-
-  //     console.log("Percentage:", percentage);
-  //     console.log("RotateX:", rotateX);
-
-  //     setScrollStyles((prevStyles) => ({
-  //       ...prevStyles,
-  //       transform: `translate3d(0px, ${percentage}%, 0px) scale3d(1, 1, 1) rotateX(${rotateX}deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`,
-  //     }));
-
-  //     lastScrollTop = st <= 0 ? 0 : st;
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollPosition = window.scrollY;
-  //     const scrollHeight =
-  //       document.documentElement.scrollHeight - window.innerHeight;
-  //     const progress = (scrollPosition / scrollHeight) * 100;
-  //     setScrollProgress(progress);
-  //     const animationKeyframes = [
-  //       {
-  //         keyframe: 0,
-  //         actions: [
-  //           {
-  //             id: "a-21-n",
-  //             actionTypeId: "TRANSFORM_ROTATE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-container",
-  //                 selectorGuids: ["6761daca-2831-d05f-7ce2-a5d9862573fd"],
-  //               },
-  //               xValue: 20,
-  //               xUnit: "deg",
-  //               yUnit: "DEG",
-  //               zUnit: "DEG",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-3",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-container",
-  //                 selectorGuids: ["6761daca-2831-d05f-7ce2-a5d9862573fd"],
-  //               },
-  //               yValue: -15,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-6",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-01",
-  //                 selectorGuids: ["64f20747-003b-864e-22e2-2dad9b4e1319"],
-  //               },
-  //               value: 0,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-7",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-01",
-  //                 selectorGuids: ["64f20747-003b-864e-22e2-2dad9b4e1319"],
-  //               },
-  //               yValue: 30,
-  //               zValue: 10,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "px",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-10",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-02",
-  //                 selectorGuids: ["37556735-147a-71a6-9949-b6aed549c80b"],
-  //               },
-  //               value: 0,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-11",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-02",
-  //                 selectorGuids: ["37556735-147a-71a6-9949-b6aed549c80b"],
-  //               },
-  //               yValue: 30,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-3",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-1st",
-  //                 selectorGuids: ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"],
-  //               },
-  //               yValue: 30,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-4",
-  //             actionTypeId: "TRANSFORM_SCALE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-1st",
-  //                 selectorGuids: ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"],
-  //               },
-  //               xValue: 0.95,
-  //               yValue: 0.95,
-  //               locked: true,
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-5",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-1st",
-  //                 selectorGuids: ["b4248ab5-c0d7-7366-a104-1a5259d22f2d"],
-  //               },
-  //               value: 0,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-6",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-2st",
-  //                 selectorGuids: ["bf097afd-afb2-4d87-957a-2f00e0e7488c"],
-  //               },
-  //               yValue: 30,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-8",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-2st",
-  //                 selectorGuids: ["bf097afd-afb2-4d87-957a-2f00e0e7488c"],
-  //               },
-  //               value: 0,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-7",
-  //             actionTypeId: "TRANSFORM_SCALE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-2st",
-  //                 selectorGuids: ["bf097afd-afb2-4d87-957a-2f00e0e7488c"],
-  //               },
-  //               xValue: 0.95,
-  //               yValue: 0.95,
-  //               locked: true,
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-9",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-3rd",
-  //                 selectorGuids: ["f362d7bc-19fc-ba62-1e1a-f66d43566038"],
-  //               },
-  //               yValue: 30,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-11",
-  //             actionTypeId: "TRANSFORM_SCALE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-3rd",
-  //                 selectorGuids: ["f362d7bc-19fc-ba62-1e1a-f66d43566038"],
-  //               },
-  //               xValue: 0.95,
-  //               yValue: 0.95,
-  //               locked: true,
-  //             },
-  //           },
-  //           {
-  //             id: "a-16-n-10",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 selector: ".animate-on-load-3rd",
-  //                 selectorGuids: ["f362d7bc-19fc-ba62-1e1a-f66d43566038"],
-  //               },
-  //               value: 0,
-  //               unit: "",
-  //             },
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         keyframe: 25,
-  //         actions: [
-  //           {
-  //             id: "a-21-n-8",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-01",
-  //                 selectorGuids: ["64f20747-003b-864e-22e2-2dad9b4e1319"],
-  //               },
-  //               value: 1,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-9",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-01",
-  //                 selectorGuids: ["64f20747-003b-864e-22e2-2dad9b4e1319"],
-  //               },
-  //               yValue: 0,
-  //               zValue: 10,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "px",
-  //             },
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         keyframe: 45,
-  //         actions: [
-  //           {
-  //             id: "a-21-n-12",
-  //             actionTypeId: "STYLE_OPACITY",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-02",
-  //                 selectorGuids: ["37556735-147a-71a6-9949-b6aed549c80b"],
-  //               },
-  //               value: 1,
-  //               unit: "",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-13",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-info-02",
-  //                 selectorGuids: ["37556735-147a-71a6-9949-b6aed549c80b"],
-  //               },
-  //               yValue: 0,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //         ],
-  //       },
-  //       {
-  //         keyframe: 65,
-  //         actions: [
-  //           {
-  //             id: "a-21-n-4",
-  //             actionTypeId: "TRANSFORM_ROTATE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-container",
-  //                 selectorGuids: ["6761daca-2831-d05f-7ce2-a5d9862573fd"],
-  //               },
-  //               xValue: 0,
-  //               xUnit: "deg",
-  //               yUnit: "DEG",
-  //               zUnit: "DEG",
-  //             },
-  //           },
-  //           {
-  //             id: "a-21-n-5",
-  //             actionTypeId: "TRANSFORM_MOVE",
-  //             config: {
-  //               delay: 0,
-  //               easing: "",
-  //               duration: 500,
-  //               target: {
-  //                 useEventTarget: "CHILDREN",
-  //                 selector: ".app-container",
-  //                 selectorGuids: ["6761daca-2831-d05f-7ce2-a5d9862573fd"],
-  //               },
-  //               yValue: 0,
-  //               xUnit: "PX",
-  //               yUnit: "%",
-  //               zUnit: "PX",
-  //             },
-  //           },
-  //         ],
-  //       },
-  //     ];
-
-  //     // Find the current keyframe
-  //     const currentKeyframe = animationKeyframes.find(
-  //       (keyframe) => progress <= keyframe.keyframe
-  //     );
-
-  //     // Trigger animations based on the current keyframe
-  //     if (currentKeyframe) {
-  //       currentKeyframe.actions.forEach((action) => {
-  //         controls.start(action);
-  //       });
-  //     }
-  //   };
-
-  //   // Attach scroll event listener
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Cleanup on component unmount
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [controls]);
-
   return (
     <>
       <div
@@ -550,37 +112,13 @@ const Home = () => {
         <div className="container">
           <div className="center-text">
             <div className="hero-text-holder">
-              <div
-                // style="-webkit-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                className="animate-on-load-1st fade-up"
-                // data-aos="fade-up"
-                ˇ
-                // initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                // animate={{
-                //   opacity: 1,
-                //   y: 0,
-                //   scale: 1,
-                // }}
-                // transition={{ delay: 0.45, duration: 1 }}
-                // style={scrollStyles}
-              >
+              <div className="animate-on-load-1st fade-up">
                 <div className="hero-text">
                   <span className="gradient-text">Tailormade</span>
                   to Manage all your Data registers
                 </div>
               </div>
-              <div
-                // style="-webkit-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                className="animate-on-load-2st"
-                ˇ
-                initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                }}
-                transition={{ delay: 0.45, duration: 1 }}
-              >
+              <div className="animate-on-load-2st fade-up" data-aos="fade-up">
                 <div className="paragraph-hero fade-up">
                   <p>
                     Operate with your data predictably, securely, and at a lower
@@ -589,30 +127,8 @@ const Home = () => {
                   </p>
                 </div>
               </div>
-              <div
-                // style="-webkit-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                className="animate-on-load-3rd"
-                ˇ
-                // initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                // animate={{
-                //   opacity: 1,
-                //   y: 0,
-                //   scale: 1,
-                // }}
-                // transition={{ delay: 0.45, duration: 1 }}
-                data-aos="fade-up"
-              >
-                <div
-                  className="hero-button-holder"
-                  ˇ
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                  }}
-                  transition={{ delay: 0.45, duration: 1 }}
-                >
+              <div className="animate-on-load-3rd fade-up" ˇ data-aos="fade-up">
+                <div className="hero-button-holder">
                   <a
                     href="https://webflow.com/templates/html/vancouver-saas-website-template"
                     target="_blank"
@@ -627,25 +143,9 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div
-            // style="-webkit-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 30%, 0) scale3d(0.95, 0.95, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-            className="animate-on-load-4rd fade-up"
-            ˇ
-            // initial={{ opacity: 0, y: 30, scale: 0.95 }}
-            // animate={{
-            //   opacity: 1,
-            //   y: 0,
-            //   scale: 1,
-            // }}
-            // transition={{ delay: 0.45, duration: 1 }}
-          >
+          <div className="animate-on-load-4rd fade-up" data-aos="fade-up">
             <div className="app-holder">
-              <div
-                className="app-container"
-                // animate={controls}
-                // style={scrollStyles}
-                data-aos="fade-up"
-              >
+              <div className="app-container">
                 <div className="app-main-photo">
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image.jpg"
@@ -792,7 +292,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="fade-in-move-on-scroll">
+            <div className="fade-in-move-on-scroll" data-aos="fade-up">
               <p>Trusted by Top-tier product campanies</p>
             </div>
           </div>
@@ -800,14 +300,14 @@ const Home = () => {
       </div>
       <div id="More" className="section">
         <div className="container _4em">
-          <div className="center-text" data-aos="fade-up">
-            <div className="fade-in-move-on-scroll">
+          <div className="center-text">
+            <div className="fade-in-move-on-scroll" data-aos="fade-up">
               <h1>
                 We can help you manage from top to bottom, all the layers.
               </h1>
             </div>
             <div className="paragraph-hero">
-              <div className="fade-in-move-on-scroll">
+              <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
                   etiam tellus aliquet risus, odio vitae cras viverra elementum.
@@ -816,15 +316,15 @@ const Home = () => {
             </div>
           </div>
           <div className="features-container">
-            <div className="w-layout-grid grid-6-col" data-aos="fade-up">
+            <div className="w-layout-grid grid-6-col">
               <div
                 id="w-node-_3e5d2762-47b3-db8b-cc0c-4a656fea09c8-aca8ea2d"
                 className="content"
               >
-                <div className="fade-in-move-on-scroll">
+                <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <h2>Top Management, to help you see the bigger picture</h2>
                 </div>
-                <div className="fade-in-move-on-scroll">
+                <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Maecenas massa massa id arcu blandit dignissim contum
@@ -892,7 +392,7 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="w-layout-grid grid-6-col" data-aos="fade-up">
+            <div className="w-layout-grid grid-6-col">
               <div
                 id="w-node-_5865c2f9-085b-8a6d-8622-8912e97a7274-aca8ea2d"
                 className="image-container"
@@ -908,10 +408,16 @@ const Home = () => {
                 id="w-node-_5865c2f9-085b-8a6d-8622-8912e97a7256-aca8ea2d"
                 className="content"
               >
-                <div className="fade-in-move-on-scroll">
+                <div
+                  className="fade-in-move-on-scroll fade-up"
+                  data-aos="fade-up"
+                >
                   <h2>Micromanage every data so there are no slip-ups</h2>
                 </div>
-                <div className="fade-in-move-on-scroll">
+                <div
+                  className="fade-in-move-on-scroll fade-up"
+                  data-aos="fade-up"
+                >
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Maecenas massa massa id arcu blandit dignissim contum
@@ -973,15 +479,15 @@ const Home = () => {
       </div>
       <div id="Features" className="section grey-section">
         <div className="container _6em">
-          <div className="center-text" data-aos="fade-up">
-            <div className="fade-in-move-on-scroll">
+          <div className="center-text">
+            <div className="fade-in-move-on-scroll" data-aos="fade-up">
               <h1>
                 All in one platform, from mobile to desktop everything you need
                 is here
               </h1>
             </div>
             <div className="paragraph-hero">
-              <div className="fade-in-move-on-scroll">
+              <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
                   etiam tellus aliquet risus, odio vitae cras viverra elementum.
@@ -989,19 +495,19 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="sticky-slider-section" data-aos="fade-up">
+          <div className="sticky-slider-section">
             <div className="w-layout-grid sticky-slider-container">
               <div
                 id="w-node-_82187d72-78de-76a1-d56b-c9a74902fc48-aca8ea2d"
                 className="sticky-text-container"
               >
                 <div className="sticky-text-holder">
-                  <div className="fade-in-move-on-scroll">
+                  <div className="fade-in-move-on-scroll" data-aos="fade-up">
                     <h2 className="no-margins">
                       Handcrafted to Manage all your data
                     </h2>
                   </div>
-                  <div className="fade-in-move-on-scroll">
+                  <div className="fade-in-move-on-scroll" data-aos="fade-up">
                     <p>
                       Get the data directly on your phone, scroll and swipe away
                       to get informed and updated
@@ -1094,20 +600,20 @@ const Home = () => {
               id="w-node-_9acb6e39-e985-ebce-2ef5-19ba02513fee-aca8ea2d"
               className="title-container"
             >
-              <div className="fade-in-move-on-scroll">
+              <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <h1 className="fade-up">
                   Access <span className="gradient-text">powerful</span>
                   and helpful features.
                 </h1>
               </div>
-              <div className="fade-in-move-on-scroll">
+              <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p className="paragraph-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
                   etiam tellus aliquet risus, odio vitae cras viverra elementum.
                 </p>
               </div>
               <div className="top-margin-l">
-                <div className="fade-in-move-on-scroll">
+                <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <a href="#" className="button arrow w-button">
                     Request a demo
                   </a>
@@ -1299,9 +805,9 @@ const Home = () => {
         </div>
       </div>
       <div id="Pricing" className="section">
-        <div className="container _6em" data-aos="fade-up">
+        <div className="container _6em">
           <div className="center-text">
-            <div className="fade-in-move-on-scroll">
+            <div className="fade-in-move-on-scroll" data-aos="fade-up">
               <h1>Our payment plan is easy to understand</h1>
             </div>
           </div>
@@ -1356,7 +862,10 @@ const Home = () => {
                             <p>$144 per person billed yearly</p>
                           </div>
                         </div>
-                        <div className="fade-in-move-on-scroll _100width">
+                        <div
+                          className="fade-in-move-on-scroll _100width"
+                          data-aos="fade-up"
+                        >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
                               <a href="#" className="button w-button">
@@ -1397,7 +906,10 @@ const Home = () => {
                             a plan later. You can cancel anytime.
                           </p>
                         </div>
-                        <div className="fade-in-move-on-scroll">
+                        <div
+                          className="fade-in-move-on-scroll"
+                          data-aos="fade-up"
+                        >
                           <div className="w-layout-grid grid-list">
                             <ul role="list" className="w-list-unstyled">
                               <li>
@@ -1518,13 +1030,13 @@ const Home = () => {
                     >
                       <div className="payment-padding">
                         <div
-                          className="fade-in-move-on-scroll fade-up"
+                          className="fade-in-move-on-scroll"
                           data-aos="fade-up"
                         >
                           <h1 className="no-margins">Pro</h1>
                         </div>
                         <div
-                          className="fade-in-move-on-scroll fade-up"
+                          className="fade-in-move-on-scroll"
                           data-aos="fade-up"
                         >
                           <div className="center-text">
@@ -1538,7 +1050,10 @@ const Home = () => {
                             <p>$144 per person billed yearly</p>
                           </div>
                         </div>
-                        <div className="fade-in-move-on-scroll _100width">
+                        <div
+                          className="fade-in-move-on-scroll _100width"
+                          data-aos="fade-up"
+                        >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
                               <a href="#" className="button w-button">
@@ -1562,18 +1077,27 @@ const Home = () => {
                       className="content"
                     >
                       <div className="tab-text-holder">
-                        <div className="fade-in-move-on-scroll fade-up">
+                        <div
+                          className="fade-in-move-on-scroll fade-up"
+                          data-aos="fade-up"
+                        >
                           <h2 className="no-margins">
                             Try Our product for free for on month
                           </h2>
                         </div>
-                        <div className="fade-in-move-on-scroll">
+                        <div
+                          className="fade-in-move-on-scroll"
+                          data-aos="fade-up"
+                        >
                           <p>
                             No credit card is required, start for free, and pick
                             a plan later. You can cancel anytime.
                           </p>
                         </div>
-                        <div className="fade-in-move-on-scroll">
+                        <div
+                          className="fade-in-move-on-scroll"
+                          data-aos="fade-up"
+                        >
                           <div className="w-layout-grid grid-list">
                             <ul role="list" className="w-list-unstyled">
                               <li>
@@ -1693,8 +1217,8 @@ const Home = () => {
       </div>
       <div className="section">
         <div className="container _6em">
-          <div className="center-text" data-aos="fade-up">
-            <div className="fade-in-move-on-scroll">
+          <div className="center-text">
+            <div className="fade-in-move-on-scroll" data-aos="fade-up">
               <h1>Connect to what you actually need</h1>
             </div>
           </div>
@@ -1704,9 +1228,7 @@ const Home = () => {
                 id="w-node-d008f252-532e-9d09-d9c2-0bb50db72bc3-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _01"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc6766fe7b1f6e89ab74d7_Comapny%20Avatar.svg"
                     loading="lazy"
@@ -1722,9 +1244,7 @@ const Home = () => {
                 id="w-node-_6b36a120-b831-13db-9104-e521eb83e706-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _02"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68db99f57152ed8120de_Company%20Avatar%2005.svg"
                     loading="lazy"
@@ -1740,9 +1260,7 @@ const Home = () => {
                 id="w-node-_8689b8b6-e83a-0577-b4e9-43bb27f11736-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _03"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc83fd9c4685ec8d12_Company%20Avatar%2006.svg"
                     loading="lazy"
@@ -1758,9 +1276,7 @@ const Home = () => {
                 id="w-node-_4f1d5286-8618-b7c4-8f9b-154d93084005-aca8ea2d"
                 className="company-avatar-container up"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _04"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc001cf66491f0cbda_Company%20Avatar%2001.svg"
                     loading="lazy"
@@ -1776,9 +1292,7 @@ const Home = () => {
                 id="w-node-_52b3093c-671c-ec38-a078-3b81fa20f408-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _05"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dce02d27863c0cb675_Company%20Avatar%2007.svg"
                     loading="lazy"
@@ -1794,9 +1308,7 @@ const Home = () => {
                 id="w-node-e3acfc95-87cd-c92c-4015-0873834ac1d1-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _06"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc7d7b7c2415942b54_Company%20Avatar%2004.svg"
                     loading="lazy"
@@ -1812,9 +1324,7 @@ const Home = () => {
                 id="w-node-ab6fd3a9-0145-6a3e-94fc-91330bb0f431-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _07"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc20250608380f0d9e_Company%20Avatar%2003.svg"
                     loading="lazy"
@@ -1830,9 +1340,7 @@ const Home = () => {
                 id="w-node-_2bb55183-bd7a-9bae-a4c9-ae37c11720c5-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _08"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc3fbee74331ea69cc_Company%20Avatar%2008.svg"
                     loading="lazy"
@@ -1848,10 +1356,7 @@ const Home = () => {
                 id="w-node-_05e15299-d605-b9eb-85f8-c9e4e84a86e4-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div
-
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _09"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb648357a202689d2688a_Company%20Avatar%2015.svg"
                     loading="lazy"
@@ -1867,9 +1372,7 @@ const Home = () => {
                 id="w-node-a9b6046f-debb-78ae-3ea8-b3631ff554a0-aca8ea2d"
                 className="company-avatar-container up hide"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _10"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb64396e2ae80e40c771e_Company%20Avatar%2018.svg"
                     loading="lazy"
@@ -1887,9 +1390,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2dd-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _11"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb643730d345dd715bef5_Company%20Avatar%2017.svg"
                     loading="lazy"
@@ -1905,9 +1406,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2e2-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _12"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb64396e2ae80e40c771e_Company%20Avatar%2018.svg"
                     loading="lazy"
@@ -1923,9 +1422,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2e7-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _13"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6439c2088ac19530a35_Company%20Avatar%2019.svg"
                     loading="lazy"
@@ -1941,9 +1438,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2ec-aca8ea2d"
                 className="company-avatar-container up"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _14"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6443a756e338e6987a3_Company%20Avatar%2020.svg"
                     loading="lazy"
@@ -1959,9 +1454,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2f1-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _15"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb645aea71ce79203da80_Company%20Avatar%2009.svg"
                     loading="lazy"
@@ -1977,9 +1470,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2f6-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _16"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6452b9c80cf9068d091_Company%20Avatar%2010.svg"
                     loading="lazy"
@@ -1995,9 +1486,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2fb-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _17"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb645870dba6e8b4843eb_Company%20Avatar%2011.svg"
                     loading="lazy"
@@ -2013,9 +1502,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff300-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _18"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb646a31203c301455ae4_Company%20Avatar%2012.svg"
                     loading="lazy"
@@ -2031,9 +1518,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff305-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 0, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _19"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb647d17b91bc646d5203_Company%20Avatar%2014.svg"
                     loading="lazy"
@@ -2049,9 +1534,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff30a-aca8ea2d"
                 className="company-avatar-container up hide"
               >
-                <div
-                // style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" className="company-avatar-circle _20"
-                >
+                <div>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6477be4212229d8a9b4_Company%20Avatar%2013.svg"
                     loading="lazy"

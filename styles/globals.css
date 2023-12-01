@@ -5525,3 +5525,7 @@ blockquote {
     transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
   }
 }
+
+.flipping-image[data-aos="flip-up"].aos-animate {
+  transform: rotateX(45deg);
+}
