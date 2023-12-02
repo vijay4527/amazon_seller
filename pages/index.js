@@ -11,8 +11,6 @@ const Home = () => {
     });
   });
 
-<<<<<<< HEAD
-=======
   const [flipDegree, setFlipDegree] = useState(0);
 
   useEffect(() => {
@@ -36,7 +34,6 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
->>>>>>> Vijay
   return (
     <>
       <div
@@ -172,7 +169,8 @@ const Home = () => {
                 id="flipper"
                 style={{ transform: `rotateX(${flipDegree}deg)` }}
               >
-z                <div className="app-main-photo">
+                z{" "}
+                <div className="app-main-photo">
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image.jpg"
                     loading="lazy"
