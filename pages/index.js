@@ -11,6 +11,32 @@ const Home = () => {
     });
   });
 
+<<<<<<< HEAD
+=======
+  const [flipDegree, setFlipDegree] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const flipper = document.getElementById("flipper");
+      const boundingBox = flipper.getBoundingClientRect();
+      const scrollPercentage = boundingBox.top / window.innerHeight;
+
+      // Calculate the flip degree based on the scroll position
+      const newFlipDegree = Math.min(scrollPercentage * 45, 45);
+
+      // Set the state to trigger a re-render with the updated flip degree
+      setFlipDegree(newFlipDegree);
+    };
+
+    // Attach the handleScroll function to the window scroll event
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+>>>>>>> Vijay
   return (
     <>
       <div
@@ -136,10 +162,17 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="animate-on-load-4rd fade-up" data-aos="fade-up">
+          <div
+            className="flip-container animate-on-load-4rd fade-up"
+            data-aos="fade-up"
+          >
             <div className="app-holder">
-              <div className="app-container">
-                <div className="app-main-photo">
+              <div
+                className="app-container flipper"
+                id="flipper"
+                style={{ transform: `rotateX(${flipDegree}deg)` }}
+              >
+z                <div className="app-main-photo">
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image.jpg"
                     loading="lazy"

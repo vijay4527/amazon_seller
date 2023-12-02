@@ -5529,3 +5529,12 @@ blockquote {
 .flipping-image[data-aos="flip-up"].aos-animate {
   transform: rotateX(45deg);
 }
+
+.flip-container {
+  perspective: 1000px;
+}
+
+.flipper {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
