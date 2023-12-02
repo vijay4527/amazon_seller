@@ -11,7 +11,7 @@ const Home = () => {
     });
   });
 
-  const [flipDegree, setFlipDegree] = useState(0);
+  const [flipDegree, setFlipDegree] = useState(20);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +20,7 @@ const Home = () => {
       const scrollPercentage = boundingBox.top / window.innerHeight;
 
       // Calculate the flip degree based on the scroll position
-      const newFlipDegree = Math.min(scrollPercentage * 45, 45);
+      const newFlipDegree = Math.min(scrollPercentage * 20, 20);
 
       // Set the state to trigger a re-render with the updated flip degree
       setFlipDegree(newFlipDegree);
@@ -34,6 +34,8 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const appInfo01Opacity = 1 - flipDegree / 20;
+
   return (
     <>
       <div
@@ -180,7 +182,10 @@ const Home = () => {
                     className="app-photo"
                   />
                 </div>
-                <div className="app-info-01">
+                <div
+                  className="app-info-01"
+                  style={{ opacity: appInfo01Opacity }}
+                >
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc14226dae299806bc7977_Earnings%20Image.jpg"
                     loading="lazy"
@@ -190,7 +195,10 @@ const Home = () => {
                     className="_100width"
                   />
                 </div>
-                <div className="app-info-02">
+                <div
+                  className="app-info-02"
+                  style={{ opacity: appInfo01Opacity }}
+                >
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights.jpg"
                     loading="lazy"
