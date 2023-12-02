@@ -10,6 +10,7 @@ const Home = () => {
       offset: 50,
     });
   });
+
   return (
     <>
       <div
