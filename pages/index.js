@@ -4,20 +4,12 @@ import "aos/dist/aos.css";
 import AOS from "aos";
 const Home = () => {
   useEffect(() => {
-    let isMounted = true;
-
-    if (isMounted) {
-      AOS.init({
-        duration: 800,
-        easing: "ease-in-out",
-        offset: 50,
-      });
-    }
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      offset: 50,
+    });
+  });
   return (
     <>
       <div
