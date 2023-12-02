@@ -368,7 +368,7 @@ const Home = () => {
                 <div className="list-container">
                   <ul role="list" className="w-list-unstyled">
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -381,7 +381,7 @@ const Home = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -394,7 +394,7 @@ const Home = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -461,7 +461,7 @@ const Home = () => {
                 <div className="list-container">
                   <ul role="list" className="w-list-unstyled">
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -474,7 +474,7 @@ const Home = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -487,7 +487,7 @@ const Home = () => {
                       </div>
                     </li>
                     <li>
-                      <div className="list-holder">
+                      <div className="list-holder" data-aos="fade-up">
                         <div className="list-icon-container">
                           <img
                             src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -547,7 +547,7 @@ const Home = () => {
                   <div className="list-container">
                     <ul role="list" className="w-list-unstyled">
                       <li>
-                        <div className="list-holder">
+                        <div className="list-holder" data-aos="fade-up">
                           <div className="list-icon-container">
                             <img
                               src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -560,7 +560,7 @@ const Home = () => {
                         </div>
                       </li>
                       <li>
-                        <div className="list-holder">
+                        <div className="list-holder" data-aos="fade-up">
                           <div className="list-icon-container">
                             <img
                               src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
@@ -573,7 +573,7 @@ const Home = () => {
                         </div>
                       </li>
                       <li>
-                        <div className="list-holder">
+                        <div className="list-holder" data-aos="fade-up">
                           <div className="list-icon-container">
                             <img
                               src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc4a566d06e55f48fbe8a4_Checkmark%20Icon.png"
