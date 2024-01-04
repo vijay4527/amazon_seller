@@ -58,7 +58,7 @@ const Home = () => {
               className="brand w-nav-brand w--current"
             >
               <img
-                src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc142251c61c394c38cb19_Vancouver%20Logo.svg"
+                src="https://fama.b-cdn.net/xQuantum/logo.png"
                 loading="lazy"
                 alt=""
                 className="brand"
@@ -68,7 +68,7 @@ const Home = () => {
               <div className="link-container">
                 <div className="nav-link">
                   <a
-                    href="#Features"
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Features</div>
@@ -77,7 +77,7 @@ const Home = () => {
                 </div>
                 <div className="nav-link">
                   <a
-                    href="#Pricing"
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Pricing</div>
@@ -86,7 +86,7 @@ const Home = () => {
                 </div>
                 <div className="nav-link">
                   <a
-                    href="#Help"
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Help</div>
@@ -106,7 +106,7 @@ const Home = () => {
                   </a>
                 </div>
                 <a
-                  href="https://webflow.com/templates/html/vancouver-saas-website-template"
+                  href="/"
                   target="_blank"
                   className="button w-button"
                 >
@@ -132,29 +132,31 @@ const Home = () => {
             <div className="hero-text-holder">
               <div className="animate-on-load-1st fade-up">
                 <div className="hero-text">
-                  <span className="gradient-text">Tailormade</span>
-                  to Manage all your Data registers
+                  <span className="gradient-text">
+                    Maximize Amazon Sales and Marketing ROI – For Sellers and
+                    Agencies
+                  </span>
                 </div>
               </div>
               <div className="animate-on-load-2st fade-up" data-aos="fade-up">
                 <div className="paragraph-hero fade-up">
                   <p>
-                    Operate with your data predictably, securely, and at a lower
-                    cost in an intuitive and easy to navigate dashboard.Designed
-                    to run all your data types.
+                    Take smarter decisions and sell faster with [product name's]
+                    comprehensive insights and integrated data from Amazon
+                    Seller Central and Ad Center.
                   </p>
                 </div>
               </div>
               <div className="animate-on-load-3rd fade-up" ˇ data-aos="fade-up">
                 <div className="hero-button-holder">
                   <a
-                    href="https://webflow.com/templates/html/vancouver-saas-website-template"
+                    href="/"
                     target="_blank"
                     className="button arrow w-button"
                   >
                     Buy for $24
                   </a>
-                  <a href="#More" className="gradient-link w-inline-block">
+                  <a href="/" className="gradient-link w-inline-block">
                     <div className="link-gradient-text">Learn More</div>
                   </a>
                 </div>
@@ -353,13 +355,14 @@ const Home = () => {
                 className="content"
               >
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
-                  <h2>Top Management, to help you see the bigger picture</h2>
+                  <h2>Unified Data Intelligence</h2>
                 </div>
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas massa massa id arcu blandit dignissim contum
-                    volutpat dolor fermentum, justo tempor.
+                    Merge your Amazon Seller Central and Ad Center data into a
+                    single, powerful dashboard. Gain a complete view of your
+                    sales and advertising metrics to make informed decisions
+                    quickly and efficiently.
                     <br />
                     <br />
                     Vulputate enim ante egestas commodo in.
@@ -443,16 +446,17 @@ const Home = () => {
                   className="fade-in-move-on-scroll fade-up"
                   data-aos="fade-up"
                 >
-                  <h2>Micromanage every data so there are no slip-ups</h2>
+                  <h2>Tailored for Growth</h2>
                 </div>
                 <div
                   className="fade-in-move-on-scroll fade-up"
                   data-aos="fade-up"
                 >
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Maecenas massa massa id arcu blandit dignissim contum
-                    volutpat dolor fermentum, justo tempor.
+                    Leverage customized insights for both individual sellers and
+                    agencies. Enhance your product listings, optimize ad spend,
+                    and increase overall profitability with targeted,
+                    data-driven strategies.
                     <br />
                     <br />
                     Vulputate enim ante egestas commodo in.
@@ -520,8 +524,11 @@ const Home = () => {
             <div className="paragraph-hero">
               <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                  etiam tellus aliquet risus, odio vitae cras viverra elementum.
+                  Sell more 📈without spending more Our intuitive features do
+                  more than just analyze numbers; they empower you and your
+                  agency to make smarter, profit-driven decisions with ease.
+                  Join a community of successful Amazon sellers and agencies who
+                  are leveraging these insights to dominate the marketplace.
                 </p>
               </div>
             </div>
@@ -534,14 +541,15 @@ const Home = () => {
               >
                 <div className="sticky-text-holder">
                   <div className="fade-in-move-on-scroll" data-aos="fade-up">
-                    <h2 className="no-margins">
-                      Handcrafted to Manage all your data
-                    </h2>
+                    <h2 className="no-margins">Competitive Edge</h2>
                   </div>
                   <div className="fade-in-move-on-scroll" data-aos="fade-up">
                     <p>
-                      Get the data directly on your phone, scroll and swipe away
-                      to get informed and updated
+                      Stay ahead in the Amazon marketplace with advanced
+                      analytics. Monitor market trends, track performance across
+                      products, duration, or keywords, and discover new
+                      opportunities to grow your client base or your own
+                      business.
                     </p>
                   </div>
                   <div className="list-container">
@@ -645,7 +653,7 @@ const Home = () => {
               </div>
               <div className="top-margin-l">
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
-                  <a href="#" className="button arrow w-button">
+                  <a href="/" className="button arrow w-button">
                     Request a demo
                   </a>
                 </div>
@@ -839,7 +847,7 @@ const Home = () => {
         <div className="container _6em">
           <div className="center-text">
             <div className="fade-in-move-on-scroll" data-aos="fade-up">
-              <h1>Our payment plan is easy to understand</h1>
+              <h1>Flexible Plans for Diverse Needs</h1>
             </div>
           </div>
           <div className="payment-holder">
@@ -852,12 +860,14 @@ const Home = () => {
             >
               <div className="tabs-menu w-tab-menu fade-up" data-aos="fade">
                 <a
+                  href="/"
                   data-w-tab="Tab 1"
                   className="tab-link right-side w-inline-block w-tab-link"
                 >
                   <div className="tab-text">Pay Monthly</div>
                 </a>
                 <a
+                 href="/"
                   data-w-tab="Tab 2"
                   className="tab-link w-inline-block w-tab-link w--current"
                 >
@@ -899,11 +909,11 @@ const Home = () => {
                         >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
-                              <a href="#" className="button w-button">
+                              <a href="/" className="button w-button">
                                 Start Free Trail
                               </a>
                               <a
-                                href="#"
+                                href="/"
                                 className="gradient-link w-inline-block"
                               >
                                 <div className="link-gradient-text grey-full">
@@ -1074,7 +1084,7 @@ const Home = () => {
                             <div className="payment-number-holder">
                               <h1 className="no-margins">$</h1>
                               <div className="payment-number-container">
-                                <div className="plan-number">12</div>
+                                <div className="plan-number">100</div>
                                 <h1 className="no-margins">/mo</h1>
                               </div>
                             </div>
@@ -1087,11 +1097,11 @@ const Home = () => {
                         >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
-                              <a href="#" className="button w-button">
+                              <a href="/" className="button w-button">
                                 Start Free Trail
                               </a>
                               <a
-                                href="#"
+                                href="/"
                                 className="gradient-link w-inline-block"
                               >
                                 <div className="link-gradient-text grey-full">
@@ -1585,10 +1595,10 @@ const Home = () => {
         <div className="container _4em">
           <div className="quick-access">
             <div className="quick-access-grid">
-              <a href="#" className="quick-access-card-holder w-inline-block">
+              <a href="/" className="quick-access-card-holder w-inline-block">
                 <div className="quick-access-card">
                   <h1>Help</h1>
-                  <p>Lorem ipsum dolor sit amet</p>
+                  <p>If you have any questions, concerns, or need help navigating our site, feel free to reach out to our dedicated support team.</p>
                 </div>
                 <div className="arrow-holder-container">
                   <img
@@ -1606,7 +1616,7 @@ const Home = () => {
               >
                 <div className="quick-access-card">
                   <h1>Contact</h1>
-                  <p>info@mycompanyemail.com</p>
+                  <p>info@xquantum.com</p>
                 </div>
                 <div className="arrow-holder-container">
                   <img
@@ -1672,12 +1682,12 @@ const Home = () => {
                 <div className="grey-border"></div>
               </div>
               <a
-                href="mailto:Security@mycompanyemail.com"
+                href="mailto:info@xquantum.com"
                 className="quick-access-card-holder w-inline-block"
               >
                 <div className="quick-access-card">
                   <h1>Security</h1>
-                  <p>Security@mycompanyemail.com</p>
+                  <p>info@xquantum.com</p>
                 </div>
                 <div className="arrow-holder-container">
                   <img
@@ -1722,98 +1732,77 @@ const Home = () => {
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a href="#" className="button arrow w-button">
+                <a href="/" className="button arrow w-button">
                   Request a demo
                 </a>
               </div>
             </div>
           </div>
           <div className="footer-flex-container">
-            <a href="#" className="footer-logo-link">
+            <span className="footer-logo-link">
               <img
-                src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc1d49a6c2177d44719778_Footer%20Logo.svg"
+                src="https://fama.b-cdn.net/xQuantum/logo.png"
                 alt=""
                 className="footer-image"
                 data-aos="fade"
               />
-            </a>
-            <a
-              href="mailto:hello@mycompanyemail.com"
+            </span>
+            <span
               className="w-inline-block"
             >
-              <h5>hello@mycompanyemail.com</h5>
-            </a>
+              <h5>info@xquantum.com</h5>
+            </span>
           </div>
           <div className="footer-line"></div>
           <div className="copy-right-section">
             <p className="copyright-text">
-              Crafted with ♥ by{" "}
-              <a
-                href="http://azwedo.com?ref=vancouver-template"
-                target="_blank"
-              >
-                Azwedo
-              </a>
-              &amp;
-              <a
-                href="http://wedoflow.com?ref=vancouver-template"
-                target="_blank"
-              >
-                Wedoflow
-              </a>
-              |Powered by{" "}
-              <a href="http://www.webflow.com" target="_blank">
-                Webflow
-              </a>
+              Powered by{" "}
+                Alphadigitall
             </p>
             <div className="footer-link-holder">
               <div
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a
-                  href="/template/licensing"
+                <span
                   className="link-block animation-01 w-inline-block"
                 >
                   <div>Licensing</div>
                   <div className="link-block-underline"></div>
-                </a>
+                </span>
               </div>
               <div
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a
-                  href="/template/style-guide"
+                <span
                   className="link-block animation-01 w-inline-block"
                 >
                   <div>Style Guide</div>
                   <div className="link-block-underline"></div>
-                </a>
+                </span>
               </div>
               <div
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a
-                  href="/template/change-log"
+                <span
                   className="link-block animation-01 w-inline-block"
                 >
                   <div>Change Log</div>
                   <div className="link-block-underline"></div>
-                </a>
+                </span>
               </div>
               <div
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a
-                  href="/template/instructions"
+                <span
                   className="link-block animation-01 w-inline-block"
                 >
                   <div>Help Center</div>
                   <div className="link-block-underline"></div>
-                </a>
+                </span>
               </div>
             </div>
           </div>

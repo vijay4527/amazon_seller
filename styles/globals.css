@@ -3920,9 +3920,17 @@ blockquote {
   font-size: 16px;
 }
 
+@media screen and (max-width: 479px) {
+    .footer-image{
+      width: 61%;
+      max-width: 61%;
+    }
+} 
+
+
 @media screen and (min-width: 1440px) {
   .container {
-    max-width: 1350px;
+    max-width: 1400px;
   }
 
   .logo-grid {
