@@ -105,11 +105,7 @@ const Home = () => {
                     <div className="link-block-underline"></div>
                   </a>
                 </div>
-                <a
-                  href="/"
-                  target="_blank"
-                  className="button w-button"
-                >
+                <a href="/" target="_blank" className="button w-button">
                   Buy for $24
                 </a>
               </div>
@@ -149,11 +145,7 @@ const Home = () => {
               </div>
               <div className="animate-on-load-3rd fade-up" ˇ data-aos="fade-up">
                 <div className="hero-button-holder">
-                  <a
-                    href="/"
-                    target="_blank"
-                    className="button arrow w-button"
-                  >
+                  <a href="/" target="_blank" className="button arrow w-button">
                     Buy for $24
                   </a>
                   <a href="/" className="gradient-link w-inline-block">
@@ -647,8 +639,11 @@ const Home = () => {
               </div>
               <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p className="paragraph-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                  etiam tellus aliquet risus, odio vitae cras viverra elementum.
+                  Unleash the Potential: Experience XQuantum,
+                  where powerful features meet seamless functionality. Elevate
+                  your journey with cutting-edge tools designed to make every
+                  interaction intuitive, efficient, and empowering. Subscribe
+                  now and unlock a world of possibilities
                 </p>
               </div>
               <div className="top-margin-l">
@@ -867,7 +862,7 @@ const Home = () => {
                   <div className="tab-text">Pay Monthly</div>
                 </a>
                 <a
-                 href="/"
+                  href="/"
                   data-w-tab="Tab 2"
                   className="tab-link w-inline-block w-tab-link w--current"
                 >
@@ -1598,7 +1593,11 @@ const Home = () => {
               <a href="/" className="quick-access-card-holder w-inline-block">
                 <div className="quick-access-card">
                   <h1>Help</h1>
-                  <p>If you have any questions, concerns, or need help navigating our site, feel free to reach out to our dedicated support team.</p>
+                  <p>
+                    If you have any questions, concerns, or need help navigating
+                    our site, feel free to reach out to our dedicated support
+                    team.
+                  </p>
                 </div>
                 <div className="arrow-holder-container">
                   <img
@@ -1724,8 +1723,9 @@ const Home = () => {
                 data-aos="fade-up"
               >
                 <p className="paragraph-white">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. At
-                  etiam tellus aliquet risus, odio vitae cras viverra elementum.
+                  Become a part of our vibrant community! Subscribe today for
+                  exclusive access, insider updates, and a front-row seat to
+                  exciting events.
                 </p>
               </div>
               <div
@@ -1747,26 +1747,19 @@ const Home = () => {
                 data-aos="fade"
               />
             </span>
-            <span
-              className="w-inline-block"
-            >
+            <span className="w-inline-block">
               <h5>info@xquantum.com</h5>
             </span>
           </div>
           <div className="footer-line"></div>
           <div className="copy-right-section">
-            <p className="copyright-text">
-              Powered by{" "}
-                Alphadigitall
-            </p>
+            <p className="copyright-text">Powered by Alphadigitall</p>
             <div className="footer-link-holder">
               <div
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <span
-                  className="link-block animation-01 w-inline-block"
-                >
+                <span className="link-block animation-01 w-inline-block">
                   <div>Licensing</div>
                   <div className="link-block-underline"></div>
                 </span>
@@ -1775,9 +1768,7 @@ const Home = () => {
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <span
-                  className="link-block animation-01 w-inline-block"
-                >
+                <span className="link-block animation-01 w-inline-block">
                   <div>Style Guide</div>
                   <div className="link-block-underline"></div>
                 </span>
@@ -1786,9 +1777,7 @@ const Home = () => {
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <span
-                  className="link-block animation-01 w-inline-block"
-                >
+                <span className="link-block animation-01 w-inline-block">
                   <div>Change Log</div>
                   <div className="link-block-underline"></div>
                 </span>
@@ -1797,9 +1786,7 @@ const Home = () => {
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <span
-                  className="link-block animation-01 w-inline-block"
-                >
+                <span className="link-block animation-01 w-inline-block">
                   <div>Help Center</div>
                   <div className="link-block-underline"></div>
                 </span>

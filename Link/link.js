@@ -26,6 +26,8 @@ const Link = () => {
     setupTouchClass();
   }, []);
 
+  
+
   return (
     <>
       <link
