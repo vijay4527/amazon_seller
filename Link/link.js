@@ -30,12 +30,7 @@ const Link = () => {
 
   return (
     <>
-      <link
-        href="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/css/az-vancouver.webflow.df6466573.css"
-        rel="stylesheet"
-        type="text/css"
-      />
-      <script
+    <script
         src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
         type="text/javascript"
       ></script>
@@ -50,10 +45,7 @@ const Link = () => {
           `,
         }}
       ></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"
-        type="text/javascript"
-      ></script>
+
      
     </>
   );

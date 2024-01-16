@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import "aos/dist/aos.css";
+import Link from "next/link";
 import AOS from "aos";
 const Home = () => {
   useEffect(() => {
@@ -18,28 +19,39 @@ const Home = () => {
       const flipper = document.getElementById("flipper");
       const boundingBox = flipper.getBoundingClientRect();
       const scrollPercentage = boundingBox.top / window.innerHeight;
-
-      // Calculate the flip degree based on the scroll position
       const newFlipDegree = Math.min(scrollPercentage * 20, 20);
-
-      // Set the state to trigger a re-render with the updated flip degree
       setFlipDegree(newFlipDegree);
     };
-
-    // Attach the handleScroll function to the window scroll event
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   const appInfo01Opacity = 1 - flipDegree / 20;
 
+  const [isSticky, setIsSticky] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const scrollThreshold = 500;
+
+      if (scrollY > scrollThreshold) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+ 
   return (
     <>
       <div
-        className="navbar w-nav"
+        className={`navbar w-nav ${isSticky ? "is-sticky" : ""}`}
         data-aos="fade"
         data-animation="default"
         data-easing2="ease"
@@ -52,7 +64,7 @@ const Home = () => {
       >
         <div className="container nav-container">
           <div className="nav-menu-container">
-            <a
+            <Link
               href="/"
               aria-current="page"
               className="brand w-nav-brand w--current"
@@ -63,51 +75,51 @@ const Home = () => {
                 alt=""
                 className="brand"
               />
-            </a>
+            </Link>
             <nav role="navigation" className="nav-menu w-nav-menu">
               <div className="link-container">
                 <div className="nav-link">
-                  <a
+                  <Link
                     href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Features</div>
                     <div className="link-block-underline"></div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="nav-link">
-                  <a
+                  <Link
                     href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Pricing</div>
                     <div className="link-block-underline"></div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="nav-link">
-                  <a
+                  <Link
                     href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Help</div>
                     <div className="link-block-underline"></div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="nav-buttons-container">
                 <div className="nav-link">
-                  <a
+                  <Link
                     href="/"
                     aria-current="page"
                     className="link-block animation-01 w-inline-block w--current"
                   >
                     <div>Sign in</div>
                     <div className="link-block-underline"></div>
-                  </a>
+                  </Link>
                 </div>
-                <a href="/" target="_blank" className="button w-button">
+                <Link href="/" target="_blank" className="button w-button">
                   Buy for $24
-                </a>
+                </Link>
               </div>
             </nav>
             <div className="menu-button w-nav-button">
@@ -145,12 +157,12 @@ const Home = () => {
               </div>
               <div className="animate-on-load-3rd fade-up" ˇ data-aos="fade-up">
                 <div className="hero-button-holder">
-                  <a href="/" target="_blank" className="button arrow w-button">
+                  <Link href="/" target="_blank" className="button arrow w-button">
                     Buy for $24
-                  </a>
-                  <a href="/" className="gradient-link w-inline-block">
+                  </Link>
+                  <Link href="/" className="gradient-link w-inline-block">
                     <div className="link-gradient-text">Learn More</div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -168,10 +180,10 @@ const Home = () => {
                 z{" "}
                 <div className="app-main-photo">
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum3.jpeg"
                     loading="lazy"
                     sizes="(max-width: 479px) 89vw, (max-width: 767px) 88vw, (max-width: 991px) 75vw, (max-width: 1439px) 76vw, 1035.1953125px"
-                    srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-500.jpeg 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-800.jpeg 800w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-1080.jpeg 1080w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-1600.jpeg 1600w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-2000.jpeg 2000w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image-p-2600.jpeg 2600w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141a89b7006a587f0ac8_App%20Image.jpg 3844w"
+                    srcSet="https://fama.b-cdn.net/xQuantum/xquantum3.jpeg 500w, https://fama.b-cdn.net/xQuantum/xquantum3.jpeg 1080w, https://fama.b-cdn.net/xQuantum/xquantum3.jpeg 2000w, https://fama.b-cdn.net/xQuantum/xquantum3.jpeg 2600w, https://fama.b-cdn.net/xQuantum/xquantum3.jpeg 3844w"
                     alt=""
                     className="app-photo"
                   />
@@ -181,7 +193,7 @@ const Home = () => {
                   style={{ opacity: appInfo01Opacity }}
                 >
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc14226dae299806bc7977_Earnings%20Image.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum1.jpeg"
                     loading="lazy"
                     sizes="(max-width: 479px) 100px, (max-width: 991px) 150px, 250px"
                     srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc14226dae299806bc7977_Earnings%20Image-p-500.jpeg 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc14226dae299806bc7977_Earnings%20Image-p-800.jpeg 800w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc14226dae299806bc7977_Earnings%20Image.jpg 952w"
@@ -194,7 +206,7 @@ const Home = () => {
                   style={{ opacity: appInfo01Opacity }}
                 >
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum2.jpeg"
                     loading="lazy"
                     sizes="(max-width: 767px) 180px, (max-width: 991px) 280px, 506px"
                     srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights-p-500.jpeg 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights-p-800.jpeg 800w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights-p-1080.jpeg 1080w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc141adc1635dfab4166e7_Visitor%20Insights.jpg 2024w"
@@ -352,8 +364,8 @@ const Home = () => {
                 </div>
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <p>
-                    Merge your Amazon Seller Central and Ad Center data into a
-                    single, powerful dashboard. Gain a complete view of your
+                    Merge your Amazon Seller Central and Ad Center data into Link
+                    single, powerful dashboard. Gain Link complete view of your
                     sales and advertising metrics to make informed decisions
                     quickly and efficiently.
                     <br />
@@ -520,7 +532,7 @@ const Home = () => {
                   Sell more 📈without spending more Our intuitive features do
                   more than just analyze numbers; they empower you and your
                   agency to make smarter, profit-driven decisions with ease.
-                  Join a community of successful Amazon sellers and agencies who
+                  Join Link community of successful Amazon sellers and agencies who
                   are leveraging these insights to dominate the marketplace.
                 </p>
               </div>
@@ -598,7 +610,7 @@ const Home = () => {
               >
                 <div className="slider-sticky-holder _01">
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bebe4e7179fecc6348f131_Slider%20Image%2001.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum4.jpg"
                     loading="lazy"
                     alt=""
                     className="feature-image"
@@ -606,7 +618,7 @@ const Home = () => {
                 </div>
                 <div className="slider-sticky-holder _02">
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bebe4e601a60ce1d2bb940_Slider%20Image%2002.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum5.jpg"
                     loading="lazy"
                     alt=""
                     className="feature-image"
@@ -614,7 +626,7 @@ const Home = () => {
                 </div>
                 <div className="slider-sticky-holder _03">
                   <img
-                    src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bebe4f8f3058338a17893b_Slider%20Image%2003.jpg"
+                    src="https://fama.b-cdn.net/xQuantum/xquantum6.jpg"
                     loading="lazy"
                     alt=""
                     className="feature-image"
@@ -640,18 +652,18 @@ const Home = () => {
               </div>
               <div className="fade-in-move-on-scroll" data-aos="fade-up">
                 <p className="paragraph-white">
-                  Unleash the Potential: Experience XQuantum,
-                  where powerful features meet seamless functionality. Elevate
-                  your journey with cutting-edge tools designed to make every
-                  interaction intuitive, efficient, and empowering. Subscribe
-                  now and unlock a world of possibilities
+                  Unleash the Potential: Experience XQuantum, where powerful
+                  features meet seamless functionality. Elevate your journey
+                  with cutting-edge tools designed to make every interaction
+                  intuitive, efficient, and empowering. Subscribe now and unlock
+                  Link world of possibilities
                 </p>
               </div>
               <div className="top-margin-l">
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
-                  <a href="/" className="button arrow w-button">
-                    Request a demo
-                  </a>
+                  <Link href="/" className="button arrow w-button">
+                    Request Link demo
+                  </Link>
                 </div>
               </div>
             </div>
@@ -687,7 +699,7 @@ const Home = () => {
                     <div className="app-gardient-top"></div>
                     <div className="full-app-image-container">
                       <img
-                        src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc59c9b64ae66f68faa904_Feature%20Grid%20Image%2001%20(1).jpg"
+                        src="https://fama.b-cdn.net/xQuantum/xquantum7.jpg"
                         loading="lazy"
                         alt=""
                         className="full-app-image"
@@ -704,16 +716,10 @@ const Home = () => {
                 <div className="feature-card-paddings">
                   <div className="feature-card-big-app-holder _02">
                     <div className="relative">
-                      <div
-                        className="fade-in-move-on-scroll fade-up"
-                        data-aos="fade-up"
-                      >
+                      <div className="fade-in-move-on-scroll">
                         <h4 className="no-margins">Real Time Data</h4>
                       </div>
-                      <div
-                        className="fade-in-move-on-scroll fade-up"
-                        data-aos="fade-up"
-                      >
+                      <div className="fade-in-move-on-scroll">
                         <p>Lorem ipsum dolor sit amet</p>
                       </div>
                     </div>
@@ -728,7 +734,6 @@ const Home = () => {
                           srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5afca6c2178c70737e28_Apple%20iPhone%2012%20Pro%20Silver-p-500.png 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5afca6c2178c70737e28_Apple%20iPhone%2012%20Pro%20Silver-p-800.png 800w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5afca6c2178c70737e28_Apple%20iPhone%2012%20Pro%20Silver.png 1024w"
                           alt=""
                           className="iphone-image"
-                          data-aos="fade"
                         />
                       </div>
                       <div className="iphone-screen-image-container">
@@ -738,8 +743,7 @@ const Home = () => {
                           sizes="(max-width: 479px) 80vw, (max-width: 991px) 61vw, 254px"
                           srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5ba6a0bf234a3fd242cc_Iphone%20App%20Image-p-500.jpeg 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5ba6a0bf234a3fd242cc_Iphone%20App%20Image.jpg 704w"
                           alt=""
-                          className="iphone-screen-image"
-                          data-aos="fade"
+                          className="iphone-screen-image"x
                         />
                       </div>
                     </div>
@@ -855,20 +859,20 @@ const Home = () => {
               className="tabs w-tabs"
             >
               <div className="tabs-menu w-tab-menu fade-up" data-aos="fade">
-                <a
+                <Link
                   href="/"
                   data-w-tab="Tab 1"
                   className="tab-link right-side w-inline-block w-tab-link"
                 >
                   <div className="tab-text">Pay Monthly</div>
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/"
                   data-w-tab="Tab 2"
                   className="tab-link w-inline-block w-tab-link w--current"
                 >
                   <div className="tab-text">Pay Annual</div>
-                </a>
+                </Link>
               </div>
               <div className="tabs-content w-tab-content">
                 <div data-w-tab="Tab 1" className="w-tab-pane">
@@ -905,17 +909,17 @@ const Home = () => {
                         >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
-                              <a href="/" className="button w-button">
+                              <Link href="/" className="button w-button">
                                 Start Free Trail
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 href="/"
                                 className="gradient-link w-inline-block"
                               >
                                 <div className="link-gradient-text grey-full">
                                   Sing in to manage your account
                                 </div>
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -940,7 +944,7 @@ const Home = () => {
                         >
                           <p>
                             No credit card is required, start for free, and pick
-                            a plan later. You can cancel anytime.
+                            Link plan later. You can cancel anytime.
                           </p>
                         </div>
                         <div
@@ -1093,17 +1097,17 @@ const Home = () => {
                         >
                           <div className="top-margin-l _100width">
                             <div className="payment-button-holder">
-                              <a href="/" className="button w-button">
+                              <Link href="/" className="button w-button">
                                 Start Free Trail
-                              </a>
-                              <a
+                              </Link>
+                              <Link
                                 href="/"
                                 className="gradient-link w-inline-block"
                               >
                                 <div className="link-gradient-text grey-full">
                                   Sing in &amp;manage your account
                                 </div>
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -1128,7 +1132,7 @@ const Home = () => {
                         >
                           <p>
                             No credit card is required, start for free, and pick
-                            a plan later. You can cancel anytime.
+                            Link plan later. You can cancel anytime.
                           </p>
                         </div>
                         <div
@@ -1265,7 +1269,9 @@ const Home = () => {
                 id="w-node-d008f252-532e-9d09-d9c2-0bb50db72bc3-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div
+                  className={`company-avatar-circle _01`}
+                >
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc6766fe7b1f6e89ab74d7_Comapny%20Avatar.svg"
                     loading="lazy"
@@ -1281,7 +1287,7 @@ const Home = () => {
                 id="w-node-_6b36a120-b831-13db-9104-e521eb83e706-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68db99f57152ed8120de_Company%20Avatar%2005.svg"
                     loading="lazy"
@@ -1297,7 +1303,7 @@ const Home = () => {
                 id="w-node-_8689b8b6-e83a-0577-b4e9-43bb27f11736-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc83fd9c4685ec8d12_Company%20Avatar%2006.svg"
                     loading="lazy"
@@ -1313,7 +1319,7 @@ const Home = () => {
                 id="w-node-_4f1d5286-8618-b7c4-8f9b-154d93084005-aca8ea2d"
                 className="company-avatar-container up"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc001cf66491f0cbda_Company%20Avatar%2001.svg"
                     loading="lazy"
@@ -1329,7 +1335,7 @@ const Home = () => {
                 id="w-node-_52b3093c-671c-ec38-a078-3b81fa20f408-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dce02d27863c0cb675_Company%20Avatar%2007.svg"
                     loading="lazy"
@@ -1345,7 +1351,7 @@ const Home = () => {
                 id="w-node-e3acfc95-87cd-c92c-4015-0873834ac1d1-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc7d7b7c2415942b54_Company%20Avatar%2004.svg"
                     loading="lazy"
@@ -1361,7 +1367,7 @@ const Home = () => {
                 id="w-node-ab6fd3a9-0145-6a3e-94fc-91330bb0f431-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc20250608380f0d9e_Company%20Avatar%2003.svg"
                     loading="lazy"
@@ -1377,7 +1383,7 @@ const Home = () => {
                 id="w-node-_2bb55183-bd7a-9bae-a4c9-ae37c11720c5-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc68dc3fbee74331ea69cc_Company%20Avatar%2008.svg"
                     loading="lazy"
@@ -1393,7 +1399,7 @@ const Home = () => {
                 id="w-node-_05e15299-d605-b9eb-85f8-c9e4e84a86e4-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb648357a202689d2688a_Company%20Avatar%2015.svg"
                     loading="lazy"
@@ -1409,7 +1415,7 @@ const Home = () => {
                 id="w-node-a9b6046f-debb-78ae-3ea8-b3631ff554a0-aca8ea2d"
                 className="company-avatar-container up hide"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb64396e2ae80e40c771e_Company%20Avatar%2018.svg"
                     loading="lazy"
@@ -1427,7 +1433,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2dd-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb643730d345dd715bef5_Company%20Avatar%2017.svg"
                     loading="lazy"
@@ -1443,7 +1449,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2e2-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb64396e2ae80e40c771e_Company%20Avatar%2018.svg"
                     loading="lazy"
@@ -1459,7 +1465,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2e7-aca8ea2d"
                 className="company-avatar-container bot"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6439c2088ac19530a35_Company%20Avatar%2019.svg"
                     loading="lazy"
@@ -1475,7 +1481,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2ec-aca8ea2d"
                 className="company-avatar-container up"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6443a756e338e6987a3_Company%20Avatar%2020.svg"
                     loading="lazy"
@@ -1491,7 +1497,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2f1-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb645aea71ce79203da80_Company%20Avatar%2009.svg"
                     loading="lazy"
@@ -1507,7 +1513,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2f6-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6452b9c80cf9068d091_Company%20Avatar%2010.svg"
                     loading="lazy"
@@ -1523,7 +1529,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff2fb-aca8ea2d"
                 className="company-avatar-container random"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb645870dba6e8b4843eb_Company%20Avatar%2011.svg"
                     loading="lazy"
@@ -1539,7 +1545,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff300-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb646a31203c301455ae4_Company%20Avatar%2012.svg"
                     loading="lazy"
@@ -1555,7 +1561,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff305-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div>
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb647d17b91bc646d5203_Company%20Avatar%2014.svg"
                     loading="lazy"
@@ -1571,7 +1577,7 @@ const Home = () => {
                 id="w-node-bf08120b-cc2a-e2f0-94fd-84a0476ff30a-aca8ea2d"
                 className="company-avatar-container up hide"
               >
-                <div>
+                <div className={`company-avatar-circle _02`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62beb6477be4212229d8a9b4_Company%20Avatar%2013.svg"
                     loading="lazy"
@@ -1591,7 +1597,7 @@ const Home = () => {
         <div className="container _4em">
           <div className="quick-access">
             <div className="quick-access-grid">
-              <a href="/" className="quick-access-card-holder w-inline-block">
+              <Link href="/" className="quick-access-card-holder w-inline-block">
                 <div className="quick-access-card">
                   <h1>Help</h1>
                   <p>
@@ -1609,8 +1615,8 @@ const Home = () => {
                   />
                 </div>
                 <div className="grey-border"></div>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="mailto:info@mycompanyemail.com"
                 className="quick-access-card-holder w-inline-block"
               >
@@ -1627,7 +1633,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="grey-border"></div>
-              </a>
+              </Link>
               <div
                 id="w-node-bcfa0579-6986-668e-09cb-5d36b8f087e7-b8f087d1"
                 className="quick-access-card-holder less-padding"
@@ -1681,7 +1687,7 @@ const Home = () => {
                 </div>
                 <div className="grey-border"></div>
               </div>
-              <a
+              <Link
                 href="mailto:info@xquantum.com"
                 className="quick-access-card-holder w-inline-block"
               >
@@ -1698,7 +1704,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="grey-border"></div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -1712,7 +1718,7 @@ const Home = () => {
               data-aos="fade-up"
             >
               <h1 className="no-margins">
-                Don’t miss the chance get a demo from our team
+                Don’t miss the chance get Link demo from our team
               </h1>
             </div>
             <div
@@ -1724,8 +1730,8 @@ const Home = () => {
                 data-aos="fade-up"
               >
                 <p className="paragraph-white">
-                  Become a part of our vibrant community! Subscribe today for
-                  exclusive access, insider updates, and a front-row seat to
+                  Become Link part of our vibrant community! Subscribe today for
+                  exclusive access, insider updates, and Link front-row seat to
                   exciting events.
                 </p>
               </div>
@@ -1733,9 +1739,9 @@ const Home = () => {
                 className="fade-in-move-on-scroll fade-up"
                 data-aos="fade-up"
               >
-                <a href="/" className="button arrow w-button">
-                  Request a demo
-                </a>
+                <Link href="/" className="button arrow w-button">
+                  Request Link demo
+                </Link>
               </div>
             </div>
           </div>
