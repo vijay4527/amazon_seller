@@ -154,51 +154,51 @@ const Home = () => {
             >
               <div className="link-container">
                 <div className="nav-link">
-                  <a
-                    href="#Features"
+                  <Link
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Features</div>
                     <div className="link-block-underline" ></div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="nav-link">
-                  <a
-                    href="#Pricing"
+                  <Link
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Pricing</div>
                     <div className="link-block-underline" ></div>
-                  </a>
+                  </Link>
                 </div>
                 <div className="nav-link">
-                  <a
-                    href="#Help"
+                  <Link
+                    href="/"
                     className="link-block animation-01 w-inline-block"
                   >
                     <div>Help</div>
                     <div className="link-block-underline" ></div>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="nav-buttons-container">
                 <div className="nav-link">
-                  <a
+                  <Link
                     href="/"
                     aria-current="page"
                     className="link-block animation-01 w-inline-block w--current"
                   >
                     <div>Sign in</div>
                     <div className="link-block-underline" ></div>
-                  </a>
+                  </Link>
                 </div>
-                <a
+                <Link
                   href="https://webflow.com/templates/html/vancouver-saas-website-template"
                   target="_blank"
                   className="button w-button"
                 >
                   Buy for $24
-                </a>
+                </Link>
               </div>
             </nav>
           </div>
