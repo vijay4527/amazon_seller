@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import "aos/dist/aos.css";
 import Link from "next/link";
 import AOS from "aos";
+import Image from "next/image";
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -47,7 +48,13 @@ const Home = () => {
     };
   }, []);
 
- 
+
+  const [showMobilenav,setShowMobileNav] = useState(false)
+
+  const handleNavBar = ()=>{
+    setShowMobileNav(!showMobilenav)
+  }
+
   return (
     <>
       <div
@@ -68,11 +75,12 @@ const Home = () => {
               href="/"
               aria-current="page"
               className="brand w-nav-brand w--current"
+              aria-label="logo"
             >
               <img
                 src="https://fama.b-cdn.net/xQuantum/logo.png"
                 loading="lazy"
-                alt=""
+                alt="logo"
                 className="brand"
               />
             </Link>
@@ -117,13 +125,13 @@ const Home = () => {
                     <div className="link-block-underline"></div>
                   </Link>
                 </div>
-                <Link href="/" target="_blank" className="button w-button">
+                <Link href="/" className="button w-button">
                   Buy for $24
                 </Link>
               </div>
             </nav>
             <div className="menu-button w-nav-button">
-              <div className="center-box">
+              <div className="center-box" onClick={handleNavBar}>
                 <img
                   src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc1260fe7b1f40dca8ea2b_menu.svg"
                   loading="lazy"
@@ -131,6 +139,68 @@ const Home = () => {
                 />
               </div>
             </div>
+          </div>
+          <div
+            className= {`w-nav-overlay ${showMobilenav ? "showMobilenav" : ""}`} 
+            data-wf-ignore=""
+            id="w-nav-overlay-0"
+            // style="height: 10969px; display: block;"
+          >
+            <nav
+              role="navigation"
+              className="nav-menu w-nav-menu"
+              // style="transform: translateY(0px) translateX(0px); transition: transform 500ms ease 0s;"
+              data-nav-menu-open=""
+            >
+              <div className="link-container">
+                <div className="nav-link">
+                  <a
+                    href="#Features"
+                    className="link-block animation-01 w-inline-block"
+                  >
+                    <div>Features</div>
+                    <div className="link-block-underline" ></div>
+                  </a>
+                </div>
+                <div className="nav-link">
+                  <a
+                    href="#Pricing"
+                    className="link-block animation-01 w-inline-block"
+                  >
+                    <div>Pricing</div>
+                    <div className="link-block-underline" ></div>
+                  </a>
+                </div>
+                <div className="nav-link">
+                  <a
+                    href="#Help"
+                    className="link-block animation-01 w-inline-block"
+                  >
+                    <div>Help</div>
+                    <div className="link-block-underline" ></div>
+                  </a>
+                </div>
+              </div>
+              <div className="nav-buttons-container">
+                <div className="nav-link">
+                  <a
+                    href="/"
+                    aria-current="page"
+                    className="link-block animation-01 w-inline-block w--current"
+                  >
+                    <div>Sign in</div>
+                    <div className="link-block-underline" ></div>
+                  </a>
+                </div>
+                <a
+                  href="https://webflow.com/templates/html/vancouver-saas-website-template"
+                  target="_blank"
+                  className="button w-button"
+                >
+                  Buy for $24
+                </a>
+              </div>
+            </nav>
           </div>
         </div>
       </div>
@@ -157,7 +227,7 @@ const Home = () => {
               </div>
               <div className="animate-on-load-3rd fade-up" ˇ data-aos="fade-up">
                 <div className="hero-button-holder">
-                  <Link href="/" target="_blank" className="button arrow w-button">
+                  <Link href="/" className="button arrow w-button">
                     Buy for $24
                   </Link>
                   <Link href="/" className="gradient-link w-inline-block">
@@ -364,10 +434,10 @@ const Home = () => {
                 </div>
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <p>
-                    Merge your Amazon Seller Central and Ad Center data into Link
-                    single, powerful dashboard. Gain Link complete view of your
-                    sales and advertising metrics to make informed decisions
-                    quickly and efficiently.
+                    Merge your Amazon Seller Central and Ad Center data into
+                    Link single, powerful dashboard. Gain Link complete view of
+                    your sales and advertising metrics to make informed
+                    decisions quickly and efficiently.
                     <br />
                     <br />
                     Vulputate enim ante egestas commodo in.
@@ -532,8 +602,8 @@ const Home = () => {
                   Sell more 📈without spending more Our intuitive features do
                   more than just analyze numbers; they empower you and your
                   agency to make smarter, profit-driven decisions with ease.
-                  Join Link community of successful Amazon sellers and agencies who
-                  are leveraging these insights to dominate the marketplace.
+                  Join Link community of successful Amazon sellers and agencies
+                  who are leveraging these insights to dominate the marketplace.
                 </p>
               </div>
             </div>
@@ -743,7 +813,8 @@ const Home = () => {
                           sizes="(max-width: 479px) 80vw, (max-width: 991px) 61vw, 254px"
                           srcSet="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5ba6a0bf234a3fd242cc_Iphone%20App%20Image-p-500.jpeg 500w, https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc5ba6a0bf234a3fd242cc_Iphone%20App%20Image.jpg 704w"
                           alt=""
-                          className="iphone-screen-image"x
+                          className="iphone-screen-image"
+                          x
                         />
                       </div>
                     </div>
@@ -1269,9 +1340,7 @@ const Home = () => {
                 id="w-node-d008f252-532e-9d09-d9c2-0bb50db72bc3-aca8ea2d"
                 className="company-avatar-container"
               >
-                <div
-                  className={`company-avatar-circle _01`}
-                >
+                <div className={`company-avatar-circle _01`}>
                   <img
                     src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/62bc6766fe7b1f6e89ab74d7_Comapny%20Avatar.svg"
                     loading="lazy"
@@ -1597,7 +1666,10 @@ const Home = () => {
         <div className="container _4em">
           <div className="quick-access">
             <div className="quick-access-grid">
-              <Link href="/" className="quick-access-card-holder w-inline-block">
+              <Link
+                href="/"
+                className="quick-access-card-holder w-inline-block"
+              >
                 <div className="quick-access-card">
                   <h1>Help</h1>
                   <p>
@@ -1651,7 +1723,7 @@ const Home = () => {
                       <div className="form-container">
                         <div className="submit-button">
                           <input
-                            type="submit"
+                            type="button"
                             value="Submit"
                             data-wait="Please wait..."
                             className="link-gradient-text grey w-button"

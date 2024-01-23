@@ -30,7 +30,7 @@ const Link = () => {
 
   return (
     <>
-    <script
+    {/* <script
         src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
         type="text/javascript"
       ></script>
@@ -45,6 +45,8 @@ const Link = () => {
           `,
         }}
       ></script>
+
+      <script src="https://assets.website-files.com/62bc1260fe7b1f3d37a8ea01/js/webflow.88c0ebf46.js"></script> */}
 
      
     </>
