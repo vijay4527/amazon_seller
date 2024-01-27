@@ -211,15 +211,19 @@ const Home = () => {
               <div className="animate-on-load-1st fade-up">
                 <div className="hero-text">
                   <span className="gradient-text">
-                    Maximize Amazon Sales and Marketing ROI – For Sellers and
-                    Agencies
+                    Maximize Amazon Sales and Marketing ROI
+                    
                   </span>
+                  <span>
+                   – for Sellers and Agencies
+                  </span>
+                  
                 </div>
               </div>
               <div className="animate-on-load-2st fade-up" data-aos="fade-up">
                 <div className="paragraph-hero fade-up">
                   <p>
-                    Take smarter decisions and sell faster with [product name's]
+                    Take smarter decisions and sell faster with XQuantum
                     comprehensive insights and integrated data from Amazon
                     Seller Central and Ad Center.
                   </p>
@@ -434,8 +438,8 @@ const Home = () => {
                 </div>
                 <div className="fade-in-move-on-scroll" data-aos="fade-up">
                   <p>
-                    Merge your Amazon Seller Central and Ad Center data into
-                    Link single, powerful dashboard. Gain Link complete view of
+                    Merge your Amazon Seller Central and AMS data into
+                    a single, powerful dashboard. Gain Link complete view of
                     your sales and advertising metrics to make informed
                     decisions quickly and efficiently.
                     <br />
